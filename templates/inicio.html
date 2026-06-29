@@ -1,0 +1,50 @@
+{{ define "contenido" }}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+        <div class="card shadow-lg">
+
+            <div class="card-body text-center p-5">
+
+                <h1 class="display-5 fw-bold mb-3">
+                    📚 Sistema de Gestión de Libros
+                </h1>
+
+                <p class="lead">
+                    Bienvenido
+                </p>
+
+                <p>
+                    Para continuar seleccione una opción.
+                </p>
+
+                <img src="/static/img/biblioteca.jpg"
+                     class="img-fluid rounded shadow my-4"
+                     style="max-height:350px;"
+                     alt="Biblioteca">
+
+                <div>
+
+                    <a href="/login"
+                       class="btn btn-primary btn-lg me-3">
+                        Iniciar Sesión
+                    </a>
+
+                    <a href="/registro"
+                       class="btn btn-success btn-lg">
+                        Registrarse
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{{ end }}
