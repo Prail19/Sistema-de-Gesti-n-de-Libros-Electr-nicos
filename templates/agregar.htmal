@@ -1,0 +1,103 @@
+{{ define "contenido" }}
+
+<div class="container">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-primary text-white">
+
+                    <h3>Agregar Libro</h3>
+
+                </div>
+
+                <div class="card-body">
+
+                    {{ if . }}
+
+                    <div class="alert alert-danger">
+
+                        {{ . }}
+
+                    </div>
+
+                    {{ end }}
+
+                    <form action="/agregar" method="POST">
+
+                        <div class="mb-3">
+
+                            <label>ID</label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                name="id"
+                                required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label>Título</label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="titulo"
+                                required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label>Autor</label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="autor"
+                                required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label>Categoría</label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="categoria"
+                                required>
+
+                        </div>
+
+                        <button class="btn btn-success">
+
+                            Guardar Libro
+
+                        </button>
+
+                        <a href="/libros" class="btn btn-secondary">
+
+                            Cancelar
+
+                        </a>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{{ end }}
