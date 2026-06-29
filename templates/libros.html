@@ -1,0 +1,95 @@
+{{ define "contenido" }}
+
+<div class="container">
+
+    <div class="d-flex justify-content-between mb-4">
+
+        <h2>📚 Catálogo de Libros</h2>
+
+        <a href="/agregar" class="btn btn-success">
+            Agregar Libro
+        </a>
+
+    </div>
+
+    <form action="/buscar" method="GET" class="mb-4">
+
+        <div class="input-group">
+
+            <input
+                type="text"
+                class="form-control"
+                name="q"
+                placeholder="Buscar libro por título">
+
+            <button class="btn btn-primary">
+                Buscar
+            </button>
+
+        </div>
+
+    </form>
+
+    <table class="table table-hover table-bordered shadow">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>ID</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Categoría</th>
+                <th>Acciones</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {{ range . }}
+
+        <tr>
+
+            <td>{{ .ID }}</td>
+
+            <td>{{ .Titulo }}</td>
+
+            <td>{{ .Autor }}</td>
+
+            <td>{{ .Categoria }}</td>
+
+            <td>
+
+                <a href="/eliminar?id={{ .ID }}" class="btn btn-danger btn-sm">
+
+                    Eliminar
+
+                </a>
+
+            </td>
+
+        </tr>
+
+        {{ else }}
+
+        <tr>
+
+            <td colspan="5" class="text-center">
+
+                No existen libros registrados.
+
+            </td>
+
+        </tr>
+
+        {{ end }}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{{ end }}
